@@ -1,0 +1,29 @@
+:host {
+    flex: 1;
+    display: flex;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+}
+
+.formError {
+    padding-bottom: 10px;
+    color: hsl(var(--appColor-error));
+}
+
+.formButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .button {
+        margin: {
+            right: var(--appConfig-globalSpacing);
+            left: var(--appConfig-globalSpacing);
+        };
+    }
+}

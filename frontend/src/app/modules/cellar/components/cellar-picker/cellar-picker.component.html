@@ -1,0 +1,7 @@
+<select id="color" name="color" [(ngModel)]="currentCellarId" (ngModelChange)="onCellarChange($event)">
+    @for (cellar of cellars; track cellar.id) {
+        <option [value]="cellar.id">
+            {{ cellar.name }}
+        </option>
+    }
+</select>

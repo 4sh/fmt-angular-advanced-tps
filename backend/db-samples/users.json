@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cd3bfbd0-b218-4e39-8979-0e7fab407296",
+    "identity": {
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "credentials": {
+      "login": "test",
+      "password": "test"
+    }
+  },
+  {
+    "id": "c56bc0b2-0168-46cd-b084-62b7bb4e30eb",
+    "identity": {
+        "firstName": "David",
+        "lastName": "Smith"
+    },
+    "credentials": {
+        "login": "test2",
+        "password": "test2"
+    }
+  }
+]

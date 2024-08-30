@@ -1,0 +1,11 @@
+[
+  {
+    "id": "4b08ab75-75df-4120-9c7a-69b65accf052",
+    "estate": "Chateau Pape Clément",
+    "color": "RED",
+    "vintage": 2009,
+    "stickerUrl": "http://localhost:3000/static/stickers/pape-clement.png",
+    "quantity": 1,
+    "scores": []
+  }
+]

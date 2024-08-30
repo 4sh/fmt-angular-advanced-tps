@@ -1,0 +1,67 @@
+table {
+    margin-top: 20px;
+    width: 40vw;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.2rem solid hsl(var(--appColor-burgundy));
+    table-layout: fixed;
+    margin: {
+        bottom: calc(var(--appConfig-globalSpacing) * 4);
+    };
+}
+
+table td,
+table th {
+    border: 0.1rem solid hsl(var(--appColor-burgundy));
+    padding: var(--appConfig-globalSpacing);
+}
+
+table tbody td {
+}
+
+table td {
+    color: hsl(var(--appColor-purple_dark));
+    background: hsl(var(--appColor-neutral-gray_light));
+}
+
+table thead {
+    background: hsl(var(--appColor-wine));
+    border-bottom: 0.4rem solid hsl(var(--appColor-burgundy));
+}
+
+table thead th {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border-left: 2px solid hsl(var(--appColor-burgundy));
+}
+
+table thead th:first-child {
+    border-left: none;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+}
+
+.formError {
+    padding-bottom: 10px;
+    color: hsl(var(--appColor-error));
+}
+
+.formButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .button {
+        margin: {
+            right: var(--appConfig-globalSpacing);
+            left: var(--appConfig-globalSpacing);
+        };
+    }
+}

@@ -1,0 +1,87 @@
+@if (stats) {
+    <div class="stats">
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'bottle.color' | translate }}</th>
+                <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byColor | keyvalue; track entry.key) {
+                    <tr>
+                        <td>
+                            {{ 'bottle.color.' + entry.key | translate }}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'bottle.estate' | translate }}</th>
+                <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byEstate | keyvalue; track entry.key) {
+                    <tr>
+                        <td>
+                            {{ entry.key }}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'bottle.vintage' | translate }}</th>
+                <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byVintage | keyvalue; track entry.key) {
+                    <tr>
+                        <td>
+                            {{ entry.key }}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'score.average' | translate }}</th>
+                <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byAverageScore | keyvalue; track entry.key) {
+                    <tr>
+                        <td>
+                            {{ entry.key }}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

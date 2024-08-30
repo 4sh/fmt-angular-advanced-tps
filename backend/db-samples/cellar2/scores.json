@@ -1,0 +1,16 @@
+[
+  {
+    "id": "815fb64a-6d73-4a0b-8ead-0c1191ebb104",
+    "bottleId": "4b08ab75-75df-4120-9c7a-69b65accf052",
+    "userId": "cd3bfbd0-b218-4e39-8979-0e7fab407296",
+    "timestamp": "2024-07-05T14:01:41.202Z",
+    "score": 19
+  },
+  {
+    "id": "b4daa912-9193-47b9-a97b-9e6ac3224d99",
+    "bottleId": "4b08ab75-75df-4120-9c7a-69b65accf052",
+    "userId": "c56bc0b2-0168-46cd-b084-62b7bb4e30eb",
+    "timestamp": "2024-07-04T12:01:41.202Z",
+    "score": 13
+  }
+]

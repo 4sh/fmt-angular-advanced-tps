@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+app-header {
+    flex: 0 auto;
+}
+
+.main {
+    flex: 3 auto;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+app-footer {
+    flex: 0 auto;
+}

@@ -1,0 +1,46 @@
+{
+  "app.footer": "2023 - Tous droits reservés",
+
+  "common.error.parameter": "Les paramètres fournis ne permettent pas de traiter cette requête",
+  "common.error.notFound": "L'entité (id = {{id}}) n'a pas pu être trouvée",
+  "common.error.alreadyExists": "L'entité existe déjà",
+
+  "auth.login": "Identifiant",
+  "auth.password": "Mot de passe",
+  "auth.submit": "Valider",
+  "auth.submit.success": "Connecté en tant que {{username}}",
+  "auth.submit.error": "Échec de l'authentification",
+  "auth.logout": "Déconnexion",
+
+  "menu.cellar": "Cave",
+  "menu.stats": "Statistiques",
+
+  "bottles": "Bouteille(s)",
+  "bottle.estate": "Château",
+  "bottle.vintage": "Millésime",
+  "bottle.quantity": "Quantité",
+  "bottle.stickerUrl": "URL étiquette",
+  "bottle.related": "Bouteilles similaires",
+  "bottle.createOrUpdate.success": "La bouteille a été créée / mise à jour avec succès",
+  "bottle.color": "Couleur",
+  "bottle.color.RED": "Rouge",
+  "bottle.color.ROSE": "Rosé",
+  "bottle.color.WHITE": "Blanc",
+  "bottle.error.alreadyExists": "Cette bouteille existe déjà",
+
+  "scores": "Notes",
+  "score.average": "Note moyenne",
+  "score.value": "Note",
+  "score.user": "Utilisateur",
+  "score.timestamp": "Date",
+  "score.new": "Nouvelle note",
+  "score.submit": "Valider",
+  "score.error.alreadyExists": "Cette note existe déjà",
+
+  "cellar.bottle.list.search": "Rechercher un château...",
+  "cellar.bottle.list.create": "Créer",
+  "cellar.bottle.edit.submit": "Valider",
+  "cellar.bottle.edit.cancel": "Annuler",
+
+  "cellar.stats.bottle.count": "Nb de bouteilles"
+}

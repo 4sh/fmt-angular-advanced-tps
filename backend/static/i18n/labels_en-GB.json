@@ -1,0 +1,46 @@
+{
+  "app.footer": "2023 - all rights reserved",
+
+  "common.error.parameter": "The provided parameter is invalid",
+  "common.error.notFound": "The entity (id = {{id}}) has not been found",
+  "common.error.alreadyExists": "The entity already exists",
+
+  "auth.login": "Login",
+  "auth.password": "Password",
+  "auth.submit": "Validate",
+  "auth.submit.success": "Logged in as {{username}}",
+  "auth.submit.error": "Authentication error",
+  "auth.logout": "Logout",
+
+  "menu.cellar": "Cellar",
+  "menu.stats": "Statistics",
+
+  "bottles": "Bottle(s)",
+  "bottle.estate": "Estate",
+  "bottle.vintage": "Vintage",
+  "bottle.quantity": "Quantity",
+  "bottle.stickerUrl": "Sticker URL",
+  "bottle.related": "Similar bottles",
+  "bottle.createOrUpdate.success": "The bottle has been created / updated with success",
+  "bottle.color": "Color",
+  "bottle.color.RED": "Red",
+  "bottle.color.ROSE": "Rose",
+  "bottle.color.WHITE": "White",
+  "bottle.error.alreadyExists": "This bottle already exists",
+
+  "scores": "Scores",
+  "score.average": "Average score",
+  "score.value": "Score",
+  "score.user": "User",
+  "score.timestamp": "Date",
+  "score.new": "New score",
+  "score.submit": "Validate",
+  "score.error.alreadyExists": "This score already exists",
+
+  "cellar.bottle.list.search": "Search an estate ...",
+  "cellar.bottle.list.create": "Create",
+  "cellar.bottle.edit.submit": "Validate",
+  "cellar.bottle.edit.cancel": "Cancel",
+
+  "cellar.stats.bottle.count": "Bottles count"
+}

@@ -1,0 +1,34 @@
+<form #form="ngForm" (ngSubmit)="onNewScore()">
+    <input name="score"
+           type="number"
+           [(ngModel)]="score"
+           required
+           min="0"
+           max="20"
+           [placeholder]="'score.new' | translate">
+    <button class="button _round"
+            type="submit"
+            [disabled]="form.invalid">
+        {{ 'score.submit' | translate }}
+    </button>
+</form>
+
+<table class="scores">
+    <thead>
+    <tr>
+        <th>{{ 'score.value' | translate }}</th>
+        <th>{{ 'score.timestamp' | translate }}</th>
+        <th>{{ 'score.user' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+        @for (score of scores; track score.id) {
+            <tr>
+                <td>{{ score.score | score }}</td>
+                <td>{{ score.timestamp | date: 'medium' }}</td>
+                <td>{{ score.userIdentity?.firstName }} {{ score.userIdentity?.lastName }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

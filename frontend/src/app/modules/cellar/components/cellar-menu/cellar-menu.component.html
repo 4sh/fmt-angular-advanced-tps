@@ -1,0 +1,16 @@
+<ul class="appMenu">
+    <cellar-picker class="appMenu-item"></cellar-picker>
+
+    <li class="appMenu-item">
+        <a class="appMenu-link" [routerLink]="['/cellar/list']" routerLinkActive="_active">
+            <i class="appMenu-icon las la-wine-bottle"></i>
+            {{ 'menu.cellar' | translate }}
+        </a>
+    </li>
+    <li class="appMenu-item">
+        <a class="appMenu-link" [routerLink]="['/cellar/stats']" routerLinkActive="_active">
+            <i class="appMenu-icon lar la-chart-bar"></i>
+            {{ 'menu.stats' | translate }}
+        </a>
+    </li>
+</ul>
