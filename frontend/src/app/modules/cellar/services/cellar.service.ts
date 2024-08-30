@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Bottle} from '../models/bottle.model';
+import {Bottle, BottleCriteria} from '../models/bottle.model';
 import {Stats} from '../models/stats.model';
 import {Observable} from 'rxjs';
 import {BottleScore} from '../models/score.model';
@@ -12,9 +12,9 @@ export class CellarService {
     constructor(private httpClient: HttpClient) {
     }
 
-    public getManyBottles(): Observable<Bottle[]> {
+    public getManyBottles(criteria?: BottleCriteria): Observable<Bottle[]> {
         return this.httpClient
-            .get<Bottle[]>('/api/private/bottle');
+            .get<Bottle[]>('/api/private/bottle', {params: criteria});
     }
 
     public getOneBottleById(id: string): Observable<Bottle> {
