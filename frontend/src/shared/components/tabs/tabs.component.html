@@ -1,0 +1,13 @@
+<ul class="tabsList">
+    @for (tab of tabs; track tab) {
+        <li class="tabsList-item">
+            <a class="tabsList-item-link" (click)="selectTab(tab)" [ngClass]="{_isActive : tab.active }">
+                {{ tab.title }}
+            </a>
+        </li>
+    }
+</ul>
+<div class="tabsContainer">
+    <ng-content></ng-content>
+</div>
+

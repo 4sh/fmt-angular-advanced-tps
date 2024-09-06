@@ -20,6 +20,8 @@ import {CellarPickerComponent} from './components/cellar-picker/cellar-picker.co
 import {ScorePipe} from './pipes/score.pipe';
 import {FilterByEstatePipe} from './pipes/filter-by-estate.pipe';
 import {ExistingUrlValidatorDirective} from './directives/existing-url-validator.directive';
+import {BottleListComponent} from './components/bottle-list/bottle-list.component';
+import {RelatedBottleListComponent} from './components/related-bottle-list/related-bottle-list.component';
 
 const components: unknown[] = [
     CellarMenuComponent,
@@ -27,7 +29,9 @@ const components: unknown[] = [
     BottleTileComponent,
     BottleStickerImageComponent,
     BottleFormComponent,
-    BottleScoresComponent
+    BottleScoresComponent,
+    BottleListComponent,
+    RelatedBottleListComponent
 ];
 
 const pages: unknown[] = [

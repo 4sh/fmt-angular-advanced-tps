@@ -3,6 +3,13 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FilterByPipe} from './pipes/filter-by.pipe';
 import {ToastrModule} from 'ngx-toastr';
+import {TabsComponent} from './components/tabs/tabs.component';
+import {TabComponent} from './components/tabs/tab/tab.component';
+
+const components: unknown[] = [
+    TabsComponent,
+    TabComponent
+];
 
 const pipes: unknown[] = [
     FilterByPipe
@@ -10,6 +17,11 @@ const pipes: unknown[] = [
 
 @NgModule({
     declarations: [
+        components,
+        pipes
+    ],
+    exports: [
+        components,
         pipes
     ],
     imports: [
@@ -19,9 +31,6 @@ const pipes: unknown[] = [
             positionClass: 'toast-bottom-right',
             progressBar: true,
         })
-    ],
-    exports: [
-        pipes
     ]
 })
 export class SharedModule {

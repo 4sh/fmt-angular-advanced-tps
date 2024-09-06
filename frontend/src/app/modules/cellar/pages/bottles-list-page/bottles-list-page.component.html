@@ -8,10 +8,4 @@
     </button>
 </div>
 
-<div class="bottlesList-list">
-    @for (bottle of bottles; track bottle.id) {
-        <bottle-tile
-            [bottle]="bottle"
-            (selected)="edit($event)"></bottle-tile>
-    }
-</div>
+<bottle-list [bottles]="bottles" (selected)="edit($event)"></bottle-list>
