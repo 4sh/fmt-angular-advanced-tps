@@ -1,7 +1,7 @@
 import {Component, Input, OnDestroy} from '@angular/core';
 import {CellarService} from '../../services/cellar.service';
 import {Router} from '@angular/router';
-import {Subscription} from 'rxjs';
+import {combineLatest, Observable, Subscription} from 'rxjs';
 import {Bottle} from '../../models/bottle.model';
 import {NotificationService} from '../../../../../shared/services/notification.service';
 import {BottleScore} from '../../models/score.model';
@@ -25,21 +25,29 @@ export class BottleDetailsPageComponent implements OnDestroy {
     @Input()
     public set id(id: string) {
         if (id) {
-            this.fetchBottleById(id);
-            this.fetchScoresByBottleId(id);
+            this.fetchDataByBottleId(id);
         }
     }
 
-    private fetchScoresByBottleId(id: string) {
-        this.cellarService
-            .getManyScoresByBottleId(id!)
-            .subscribe(scores => this.scores = scores);
+    private fetchDataByBottleId(id: string) {
+        combineLatest([
+            this.fetchBottleById(id),
+            this.fetchScoresByBottleId(id)
+        ])
+            .subscribe(([bottle, scores]) => {
+                this.bottle = bottle;
+                this.scores = scores;
+            });
     }
 
-    private fetchBottleById(id: string) {
-        this.cellarService
-            .getOneBottleById(id!)
-            .subscribe(bottle => this.bottle = bottle);
+    private fetchScoresByBottleId(id: string): Observable<BottleScore[]> {
+        return this.cellarService
+            .getManyScoresByBottleId(id!);
+    }
+
+    private fetchBottleById(id: string): Observable<Bottle> {
+        return this.cellarService
+            .getOneBottleById(id!);
     }
 
     public saveBottle(bottle: Bottle): void {
@@ -63,7 +71,7 @@ export class BottleDetailsPageComponent implements OnDestroy {
             const bottleId = this.bottle!.id!;
             this.cellarService
                 .createOneScoreByBottleId(bottleId, score)
-                .subscribe(() => this.fetchScoresByBottleId(bottleId));
+                .subscribe(() => this.fetchDataByBottleId(bottleId));
         }
     }
 

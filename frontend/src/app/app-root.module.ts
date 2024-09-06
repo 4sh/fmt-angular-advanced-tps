@@ -18,6 +18,7 @@ import {LocaleService} from './services/locale.service';
 import localeEn from '@angular/common/locales/en';
 import localeFr from '@angular/common/locales/fr';
 import {AppLocalePickerComponent} from './components/app-locale-picker/app-locale-picker.component';
+import {cellarInterceptor} from './modules/cellar/interceptors/cellar.interceptor';
 
 registerLocaleData(localeEn);
 registerLocaleData(localeFr);
@@ -60,7 +61,7 @@ const pages: unknown[] = [
     bootstrap: [AppRootPageComponent],
     providers: [
         provideHttpClient(
-            withInterceptors([authInterceptor, errorInterceptor])
+            withInterceptors([authInterceptor, errorInterceptor, cellarInterceptor])
         ),
         {
             provide: LOCALE_ID,

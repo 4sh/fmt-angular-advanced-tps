@@ -39,6 +39,7 @@ export class CellarPickerComponent implements OnInit {
     public onCellarChange(cellarId: string) {
         if (cellarId) {
             this.currentCellarService.setCurrentCellarId(cellarId);
+            location.reload();
         }
     }
 }
