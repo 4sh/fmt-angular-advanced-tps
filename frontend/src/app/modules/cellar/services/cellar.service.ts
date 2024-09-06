@@ -17,6 +17,11 @@ export class CellarService {
             .get<Bottle[]>('/api/private/bottle', {params: criteria});
     }
 
+    public getManyRelatedBottlesByBottleId(id: string) {
+        return this.httpClient
+            .get<Bottle[]>(`/api/private/bottle/${id}/related`);
+    }
+
     public getOneBottleById(id: string): Observable<Bottle> {
         return this.httpClient
             .get<Bottle>(`/api/private/bottle/${id}`);

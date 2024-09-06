@@ -1,0 +1,27 @@
+.bottlesList {
+    &-list {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: stretch;
+        container: bottleList / inline-size;
+
+        bottle-tile {
+            width: calc(100% - var(--appConfig-globalSpacing) * 2);
+
+            @container bottleList (width > 600px) {
+                width: calc(50% - var(--appConfig-globalSpacing) * 2);
+            }
+
+            @container bottleList (width > 1200px) {
+                width: calc(33% - var(--appConfig-globalSpacing) * 2);
+            }
+
+            @container bottleList (width > 1300px) {
+                width: calc(20% - var(--appConfig-globalSpacing) * 2);
+            }
+        }
+    }
+}
