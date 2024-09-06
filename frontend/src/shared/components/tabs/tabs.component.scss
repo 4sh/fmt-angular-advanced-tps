@@ -1,0 +1,46 @@
+.tabsList {
+    list-style-type: none;
+    display: flex;
+    gap: 2px;
+    padding: 0;
+    margin-bottom: 0;
+
+    &-item {
+        &:first-child {
+            .tabsList-item-link {
+                border-radius: var(--appConfig-globalRadius) 0 0 0;
+            }
+        }
+        &:last-child {
+            .tabsList-item-link {
+                border-radius: 0 var(--appConfig-globalRadius) 0 0;
+            }
+        }
+        &-link {
+            display: flex;
+            padding: 8px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: hsl(var(--appColor-neutral-gray_dark));
+
+            &:hover {
+                background-color: hsl(var(--appColor-wine) / 0.6);
+            }
+
+            &._isActive {
+                background-color: hsl(var(--appColor-wine));;
+                cursor: default;
+            }
+        }
+
+    }
+}
+
+.tabsContainer {
+    display: flex;
+    padding: 16px;
+    background-color: hsl(var(--appColor-neutral-gray_light)/0.6);
+    border-radius: 0 0 var(--appConfig-globalRadius) var(--appConfig-globalRadius);
+}

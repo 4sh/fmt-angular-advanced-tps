@@ -24,7 +24,7 @@
                 </div>
                 @if (bottle.computed && bottle.computed.averageScore) {
                     <div class="bottleTile-score">
-                        {{ 'score.average' | translate }}
+                        {{ 'score.average' | translate }} <br>
                         <span class="bottleTile-score-value">{{ bottle.computed.averageScore | score }}</span>
                     </div>
                 }
