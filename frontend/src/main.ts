@@ -14,13 +14,17 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {registerLocaleData} from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import localeFr from '@angular/common/locales/fr';
+import {cellarInterceptor} from './app/features/cellar/interceptors/cellar.interceptor';
 
 registerLocaleData(localeEn);
 registerLocaleData(localeFr);
 
 bootstrapApplication(AppRootPageComponent, {
     providers: [
-        provideHttpClient(withInterceptorsFromDi(), withInterceptors([authInterceptor, errorInterceptor])),
+        provideHttpClient(
+            withInterceptorsFromDi(),
+            withInterceptors([authInterceptor, errorInterceptor, cellarInterceptor])
+        ),
         provideRouter(routes, withComponentInputBinding()),
         provideAnimations(),
         provideToastr({
