@@ -20,4 +20,7 @@ export type BottleComputedData = {
 
 export type BottleCriteria = {
     q?: string;
+    estate?: string;
+    vintage?: number;
+    color?: Color;
 };
