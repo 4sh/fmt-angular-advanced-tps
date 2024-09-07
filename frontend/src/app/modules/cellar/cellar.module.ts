@@ -3,7 +3,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {routes} from './cellar.routes';
 import {BottleTileComponent} from './components/bottle-tile/bottle-tile.component';
 import {CellarPageComponent} from './pages/cellar-page/cellar-page.component';
@@ -22,6 +22,7 @@ import {FilterByEstatePipe} from './pipes/filter-by-estate.pipe';
 import {ExistingUrlValidatorDirective} from './directives/existing-url-validator.directive';
 import {BottleListComponent} from './components/bottle-list/bottle-list.component';
 import {RelatedBottleListComponent} from './components/related-bottle-list/related-bottle-list.component';
+import {UniqueBottleValidatorDirective} from './directives/unique-bottle-validator.directive';
 
 const components: unknown[] = [
     CellarMenuComponent,
@@ -47,7 +48,8 @@ const pipes: unknown[] = [
 ];
 
 const directives: unknown[] = [
-    ExistingUrlValidatorDirective
+    ExistingUrlValidatorDirective,
+    UniqueBottleValidatorDirective
 ];
 
 @NgModule({
@@ -63,6 +65,7 @@ const directives: unknown[] = [
         HttpClientModule,
         RouterModule.forChild(routes),
         FormsModule,
+        ReactiveFormsModule,
         TranslateModule,
         SharedModule,
         NgOptimizedImage

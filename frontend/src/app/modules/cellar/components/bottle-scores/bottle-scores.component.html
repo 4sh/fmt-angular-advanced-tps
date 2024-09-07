@@ -1,17 +1,28 @@
-<form #form="ngForm" (ngSubmit)="onNewScore()">
-    <input name="score"
-           type="number"
-           [(ngModel)]="score"
-           required
-           min="0"
-           max="20"
-           [placeholder]="'score.new' | translate">
-    <button class="button _round"
-            type="submit"
-            [disabled]="form.invalid">
-        {{ 'score.submit' | translate }}
-    </button>
-</form>
+@if (scoreForm) {
+    <form class="scoresForm" [formGroup]="scoreForm" (ngSubmit)="onNewScore()">
+        <div class="scoresForm-fields">
+            <div class="scoresForm-field">
+                <input name="score"
+                       formControlName="score"
+                       type="number"
+                       [class._error]="scoreForm.controls['score'].errors?.['alreadyExists']"
+                       [placeholder]="'score.new' | translate">
+            </div>
+
+            <button class="button _round"
+                    type="submit"
+                    [disabled]="scoreForm.invalid">
+                {{ 'score.submit' | translate }}
+            </button>
+        </div>
+
+        @if (scoreForm.controls['score'].errors?.['alreadyExists']) {
+            <div class="scoresForm-error">
+                {{ 'score.error.alreadyExists' | translate }}
+            </div>
+        }
+    </form>
+}
 
 <table class="scores">
     <thead>
