@@ -1,10 +1,9 @@
 import {Component, Input, OnDestroy} from '@angular/core';
 import {CellarService} from '../../services/cellar.service';
 import {Router} from '@angular/router';
-import {combineLatest, Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Bottle} from '../../models/bottle.model';
 import {NotificationService} from '../../../../../shared/services/notification.service';
-import {BottleScore} from '../../models/score.model';
 
 @Component({
     selector: 'bottle-details-page',
@@ -12,42 +11,22 @@ import {BottleScore} from '../../models/score.model';
     styleUrl: './bottle-details-page.component.scss'
 })
 export class BottleDetailsPageComponent implements OnDestroy {
-    public bottle?: Bottle;
-    public scores?: BottleScore[];
+    public _bottle?: Bottle;
     private fetchBottleSubscription?: Subscription;
     private saveBottleSubscription?: Subscription;
+
+    @Input()
+    public set bottle(bottle: Bottle) {
+        this._bottle = bottle;
+    }
+
+    public get bottle(): Bottle | undefined {
+        return this._bottle;
+    }
 
     constructor(private router: Router,
                 private notificationService: NotificationService,
                 private cellarService: CellarService) {
-    }
-
-    @Input()
-    public set id(id: string) {
-        if (id) {
-            this.fetchDataByBottleId(id);
-        }
-    }
-
-    private fetchDataByBottleId(id: string) {
-        combineLatest([
-            this.fetchBottleById(id),
-            this.fetchScoresByBottleId(id)
-        ])
-            .subscribe(([bottle, scores]) => {
-                this.bottle = bottle;
-                this.scores = scores;
-            });
-    }
-
-    private fetchScoresByBottleId(id: string): Observable<BottleScore[]> {
-        return this.cellarService
-            .getManyScoresByBottleId(id!);
-    }
-
-    private fetchBottleById(id: string): Observable<Bottle> {
-        return this.cellarService
-            .getOneBottleById(id!);
     }
 
     public saveBottle(bottle: Bottle): void {
@@ -63,15 +42,6 @@ export class BottleDetailsPageComponent implements OnDestroy {
             this.saveBottleSubscription = this.cellarService
                 .createOneBottle(bottle)
                 .subscribe(onAfterSave);
-        }
-    }
-
-    public createScore(score: number | undefined | null): void {
-        if (score) {
-            const bottleId = this.bottle!.id!;
-            this.cellarService
-                .createOneScoreByBottleId(bottleId, score)
-                .subscribe(() => this.fetchDataByBottleId(bottleId));
         }
     }
 

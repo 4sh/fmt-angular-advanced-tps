@@ -1,5 +1,5 @@
 @if (scoreForm) {
-    <form class="scoresForm" [formGroup]="scoreForm" (ngSubmit)="onNewScore()">
+    <form class="scoresForm" [formGroup]="scoreForm" (ngSubmit)="createScore()">
         <div class="scoresForm-fields">
             <div class="scoresForm-field">
                 <input name="score"

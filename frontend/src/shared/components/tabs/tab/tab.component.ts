@@ -8,6 +8,8 @@ import {TabsComponent} from '../tabs.component';
 })
 export class TabComponent implements OnInit {
     @Input({required: true}) public title?: string;
+    @Input({required: true}) public path?: string;
+    @Input() public default?: boolean;
     public active: boolean = false;
 
     constructor(private tabsComponent: TabsComponent) {

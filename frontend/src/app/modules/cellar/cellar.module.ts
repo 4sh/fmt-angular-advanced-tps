@@ -15,13 +15,15 @@ import {CellarMenuComponent} from './components/cellar-menu/cellar-menu.componen
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../../shared/shared.module';
 import {BottleFormComponent} from './components/bottle-form/bottle-form.component';
-import {BottleScoresComponent} from './components/bottle-scores/bottle-scores.component';
+import {BottleScoresPageComponent} from './pages/bottle-details-page/bottle-scores-page/bottle-scores-page.component';
 import {CellarPickerComponent} from './components/cellar-picker/cellar-picker.component';
 import {ScorePipe} from './pipes/score.pipe';
 import {FilterByEstatePipe} from './pipes/filter-by-estate.pipe';
 import {ExistingUrlValidatorDirective} from './directives/existing-url-validator.directive';
 import {BottleListComponent} from './components/bottle-list/bottle-list.component';
-import {RelatedBottleListComponent} from './components/related-bottle-list/related-bottle-list.component';
+import {
+    RelatedBottleListPageComponent
+} from './pages/bottle-details-page/related-bottle-list-page/related-bottle-list-page.component';
 import {UniqueBottleValidatorDirective} from './directives/unique-bottle-validator.directive';
 
 const components: unknown[] = [
@@ -30,15 +32,15 @@ const components: unknown[] = [
     BottleTileComponent,
     BottleStickerImageComponent,
     BottleFormComponent,
-    BottleScoresComponent,
-    BottleListComponent,
-    RelatedBottleListComponent
+    BottleListComponent
 ];
 
 const pages: unknown[] = [
     CellarPageComponent,
     BottlesListPageComponent,
     BottleDetailsPageComponent,
+    BottleScoresPageComponent,
+    RelatedBottleListPageComponent,
     StatsPageComponent
 ];
 

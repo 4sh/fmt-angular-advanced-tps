@@ -46,7 +46,7 @@ const pages: unknown[] = [
         CommonModule,
         BrowserModule,
         HttpClientModule,
-        RouterModule.forRoot(routes, {bindToComponentInputs: true}),
+        RouterModule.forRoot(routes, {bindToComponentInputs: true, paramsInheritanceStrategy: 'always'}),
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

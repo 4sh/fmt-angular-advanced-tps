@@ -4,6 +4,11 @@ import {BottlesListPageComponent} from './pages/bottles-list-page/bottles-list-p
 import {isAuthenticated} from '../auth/guards/is-authenticated.guard';
 import {BottleDetailsPageComponent} from './pages/bottle-details-page/bottle-details-page.component';
 import {StatsPageComponent} from './pages/stats-page/stats-page.component';
+import {bottleResolver} from './services/bottle.resolver';
+import {BottleScoresPageComponent} from './pages/bottle-details-page/bottle-scores-page/bottle-scores-page.component';
+import {
+    RelatedBottleListPageComponent
+} from './pages/bottle-details-page/related-bottle-list-page/related-bottle-list-page.component';
 
 export const routes: Routes = [
     {
@@ -17,7 +22,12 @@ export const routes: Routes = [
             },
             {
                 path: 'bottle/:id/details',
-                component: BottleDetailsPageComponent
+                component: BottleDetailsPageComponent,
+                resolve: {bottle: bottleResolver},
+                children: [
+                    {path: 'scores', outlet: 'tab', component: BottleScoresPageComponent},
+                    {path: 'related', outlet: 'tab', component: RelatedBottleListPageComponent}
+                ]
             },
             {
                 path: 'bottle/new',

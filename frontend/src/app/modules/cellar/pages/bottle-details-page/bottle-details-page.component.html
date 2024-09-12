@@ -2,18 +2,12 @@
     <div class="bottleForm">
         <bottle-form [bottle]="bottle" (submitted)="saveBottle($event)"></bottle-form>
     </div>
-    <div class="bottleScores">
-        <tabs>
-            <tab #scoresTab [title]="'scores' | translate">
-                @if (scoresTab.active) {
-                    <bottle-scores [scores]="scores" (submitted)="createScore($event)"></bottle-scores>
-                }
-            </tab>
-            <tab #similarTab [title]="'bottle.related' | translate">
-                @if (similarTab.active) {
-                    <related-bottle-list [bottle]="bottle"></related-bottle-list>
-                }
-            </tab>
-        </tabs>
-    </div>
+    @if (bottle?.id) {
+        <div class="bottleScores">
+            <tabs>
+                <tab [title]="'scores' | translate" path="scores" [default]="true"></tab>
+                <tab [title]="'bottle.related' | translate" path="related"></tab>
+            </tabs>
+        </div>
+    }
 </div>
