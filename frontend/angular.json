@@ -87,7 +87,7 @@
                     }
                 },
                 "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
+                    "builder": "@angular-devkit/build-angular:web-test-runner",
                     "options": {
                         "polyfills": [
                             "zone.js",
@@ -119,13 +119,60 @@
                             "src/**/*.html"
                         ]
                     }
+                },
+                "cypress-run": {
+                    "builder": "@cypress/schematic:cypress",
+                    "options": {
+                        "devServerTarget": "ui:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "ui:serve:production"
+                        }
+                    }
+                },
+                "cypress-open": {
+                    "builder": "@cypress/schematic:cypress",
+                    "options": {
+                        "watch": true,
+                        "headless": false
+                    }
+                },
+                "ct": {
+                    "builder": "@cypress/schematic:cypress",
+                    "options": {
+                        "devServerTarget": "ui:serve",
+                        "watch": true,
+                        "headless": false,
+                        "testingType": "component"
+                    },
+                    "configurations": {
+                        "development": {
+                            "devServerTarget": "ui:serve:development"
+                        }
+                    }
+                },
+                "e2e": {
+                    "builder": "@cypress/schematic:cypress",
+                    "options": {
+                        "devServerTarget": "ui:serve",
+                        "watch": true,
+                        "headless": false
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "ui:serve:production"
+                        }
+                    }
                 }
             }
         }
     },
     "cli": {
         "schematicCollections": [
-            "@angular-eslint/schematics"
+            "@cypress/schematic",
+            "@angular-eslint/schematics",
+            "@schematics/angular"
         ],
         "analytics": false
     }
