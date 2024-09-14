@@ -4,7 +4,7 @@ import {BehaviorSubject, catchError, map, Observable, of, tap} from 'rxjs';
 import {Session, UserIdentity} from '../models/session.model';
 
 export type OptionalUserIdentity = ({id: string} & UserIdentity) | undefined;
-const storageKey = '_winecellar.io_session_id_';
+export const storageKey = '_winecellar.io_session_id_';
 
 @Injectable({
     providedIn: 'root'
