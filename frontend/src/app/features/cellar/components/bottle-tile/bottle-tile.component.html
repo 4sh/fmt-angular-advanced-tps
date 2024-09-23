@@ -20,7 +20,7 @@
                 <div class="bottleTile-color">{{ 'bottle.color.' + bottle.color | translate }}</div>
                 <div class="bottleTile-qty">
                     <span class="bottleTile-qty-value">{{ bottle.quantity }}</span>
-                    {{ 'bottles' | translate | lowercase }}
+                    {{ 'bottles' | translate: {quantity: bottle.quantity} | lowercase }}
                 </div>
                 @if (bottle.computed && bottle.computed.averageScore) {
                     <div class="bottleTile-score">

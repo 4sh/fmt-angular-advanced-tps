@@ -15,7 +15,7 @@
   "menu.cellar": "Cellar",
   "menu.stats": "Statistics",
 
-  "bottles": "Bottle(s)",
+  "bottles": "Bottle{quantity, plural, =0{} one{} other{s}}",
   "bottle.estate": "Estate",
   "bottle.vintage": "Vintage",
   "bottle.quantity": "Quantity",

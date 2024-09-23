@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-export const supportedLocales: string[] = ['fr-FR', 'en-GB'];
+export const supportedLocales: string[] = ['fr-FR', 'en-GB', 'es-ES'];
 const defaultLocale: string = 'fr-FR';
 export const storageKey = '_winecellar.io_current_locale';
 

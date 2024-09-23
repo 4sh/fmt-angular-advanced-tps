@@ -15,7 +15,7 @@
   "menu.cellar": "Cave",
   "menu.stats": "Statistiques",
 
-  "bottles": "Bouteille(s)",
+  "bottles": "Bouteille{quantity, plural, =0{} one{} other{s}}",
   "bottle.estate": "Château",
   "bottle.vintage": "Millésime",
   "bottle.quantity": "Quantité",

@@ -7,17 +7,20 @@ import {provideRouter, withComponentInputBinding, withRouterConfig} from '@angul
 import {routes} from './app/app-root.routes';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideToastr} from 'ngx-toastr';
-import {provideTranslateService, TranslateLoader} from '@ngx-translate/core';
+import {provideTranslateService, TranslateCompiler, TranslateLoader} from '@ngx-translate/core';
 import {LOCALE_ID} from '@angular/core';
 import {LocaleService} from './app/services/locale.service';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {registerLocaleData} from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import localeFr from '@angular/common/locales/fr';
+import localeEs from '@angular/common/locales/es';
 import {cellarInterceptor} from './app/features/cellar/interceptors/cellar.interceptor';
+import {TranslateMessageFormatCompiler} from 'ngx-translate-messageformat-compiler';
 
 registerLocaleData(localeEn);
 registerLocaleData(localeFr);
+registerLocaleData(localeEs);
 
 bootstrapApplication(AppRootPageComponent, {
     providers: [
@@ -36,6 +39,10 @@ bootstrapApplication(AppRootPageComponent, {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
+            },
+            compiler: {
+                provide: TranslateCompiler,
+                useClass: TranslateMessageFormatCompiler
             }
         }),
         {

@@ -1,0 +1,46 @@
+{
+  "app.footer": "2023 - Reservados todos los derechos",
+
+  "common.error.parameter": "Los parámetros proporcionados no permiten procesar esta solicitud",
+  "common.error.notFound": "No se pudo encontrar la entidad (id = {{id}})",
+  "common.error.alreadyExists": "La entidad ya existe",
+
+  "auth.login": "Identificador",
+  "auth.password": "Contraseña",
+  "auth.submit": "Para validar",
+  "auth.submit.success": "Iniciado sesión como {{username}}",
+  "auth.submit.error": "Error de autenticación",
+  "auth.logout": "Desconectar",
+
+  "menu.cellar": "Bodega",
+  "menu.stats": "Estadística",
+
+  "bottles": "Botella{quantity, plural, =0{} one{} other{s}}",
+  "bottle.estate": "Castillo",
+  "bottle.vintage": "Antiguo",
+  "bottle.quantity": "Cantidad",
+  "bottle.stickerUrl": "URL etiqueta",
+  "bottle.related": "Botellas similares",
+  "bottle.createOrUpdate.success": "La botella se creó/actualizó correctamente",
+  "bottle.color": "Color",
+  "bottle.color.RED": "Rojo",
+  "bottle.color.ROSE": "Rosado",
+  "bottle.color.WHITE": "Blanco",
+  "bottle.error.alreadyExists": "Esta botella ya existe",
+
+  "scores": "Notas",
+  "score.average": "Calificación promedio",
+  "score.value": "Nota",
+  "score.user": "Usuario",
+  "score.timestamp": "Fecha",
+  "score.new": "Nueva nota",
+  "score.submit": "Para validar",
+  "score.error.alreadyExists": "Esta nota ya existe",
+
+  "cellar.bottle.list.search": "Busca un castillo...",
+  "cellar.bottle.list.create": "Crear",
+  "cellar.bottle.edit.submit": "Para validar",
+  "cellar.bottle.edit.cancel": "Cancelar",
+
+  "cellar.stats.bottle.count": "Cantidad de botellas"
+}
