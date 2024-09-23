@@ -12,16 +12,19 @@ import {authInterceptor} from './modules/auth/interceptors/auth.interceptor';
 import {errorInterceptor} from './modules/auth/interceptors/error.interceptor';
 import {AuthModule} from './modules/auth/auth.module';
 import {CellarModule} from './modules/cellar/cellar.module';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateCompiler, TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {LocaleService} from './services/locale.service';
 import localeEn from '@angular/common/locales/en';
+import localeEs from '@angular/common/locales/es';
 import localeFr from '@angular/common/locales/fr';
 import {AppLocalePickerComponent} from './components/app-locale-picker/app-locale-picker.component';
 import {cellarInterceptor} from './modules/cellar/interceptors/cellar.interceptor';
+import {TranslateMessageFormatCompiler} from 'ngx-translate-messageformat-compiler';
 
 registerLocaleData(localeEn);
 registerLocaleData(localeFr);
+registerLocaleData(localeEs);
 
 export function createTranslateLoader(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, '/static/i18n/labels_', '.json');
@@ -52,6 +55,10 @@ const pages: unknown[] = [
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
+            },
+            compiler: {
+                provide: TranslateCompiler,
+                useClass: TranslateMessageFormatCompiler
             }
         }),
         FormsModule,

@@ -22,10 +22,12 @@
         "@angular/platform-browser": "^17.3.12",
         "@angular/platform-browser-dynamic": "^17.3.12",
         "@angular/router": "^17.3.12",
+        "@messageformat/core": "^3.4.0",
         "@ngx-translate/core": "^15.0.0",
         "@ngx-translate/http-loader": "^8.0.0",
         "eslint-plugin-check-file": "2.6.2",
         "ngx-toastr": "^18.0.0",
+        "ngx-translate-messageformat-compiler": "^7.0.0",
         "rxjs": "~7.8.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.14.2"
@@ -44,6 +46,7 @@
         "@typescript-eslint/eslint-plugin": "6.11.0",
         "@typescript-eslint/parser": "6.11.0",
         "@web/test-runner": "^0.18.3",
+        "cypress": "latest",
         "eslint": "^8.53.0",
         "jasmine-core": "~5.1.0",
         "karma": "~6.4.0",
@@ -51,8 +54,7 @@
         "karma-coverage": "~2.2.0",
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
-        "typescript": "~5.2.2",
-        "cypress": "latest"
+        "typescript": "~5.2.2"
     },
     "engines": {
         "node": "^20.10.0"
