@@ -1,11 +1,10 @@
 import {Routes} from '@angular/router';
+import {authRoutes} from './features/auth/auth.routes';
+import {cellarRoutes} from './features/cellar/cellar.routes';
 
 export const routes: Routes = [
-    {
-        path: '',
-        redirectTo: '/cellar',
-        pathMatch: 'full'
-    },
+    ...authRoutes,
+    ...cellarRoutes,
     {
         path: '**',
         redirectTo: '/cellar'

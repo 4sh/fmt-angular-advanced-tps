@@ -1,0 +1,20 @@
+import {Injectable, Pipe, PipeTransform} from '@angular/core';
+import {UserIdentity} from '../models/session.model';
+import {UpperCasePipe} from '@angular/common';
+
+@Pipe({
+    name: 'userIdentity'
+})
+@Injectable({providedIn: 'root'})
+export class UserIdentityPipe implements PipeTransform {
+    private readonly upperCasePipe: UpperCasePipe = new UpperCasePipe();
+
+    transform(userIdentity?: UserIdentity): string {
+        if (!userIdentity) {
+            return '';
+        }
+
+        return `${userIdentity.firstName} ${this.upperCasePipe.transform(userIdentity.lastName)}`;
+    }
+
+}

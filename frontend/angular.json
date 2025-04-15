@@ -9,7 +9,6 @@
                 "@schematics/angular:component": {
                     "style": "scss",
                     "skipTests": true,
-                    "standalone": false,
                     "prefix": ""
                 }
             },
@@ -40,7 +39,15 @@
                         "stylePreprocessorOptions": {
                             "includePaths": [
                                 "src"
-                            ]
+                            ],
+                            "sass": {
+                                "silenceDeprecations": [
+                                    "mixed-decls",
+                                    "color-functions",
+                                    "global-builtin",
+                                    "import"
+                                ]
+                            }
                         }
                     },
                     "configurations": {

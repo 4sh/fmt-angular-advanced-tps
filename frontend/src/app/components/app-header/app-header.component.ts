@@ -1,12 +1,21 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {UserIdentity} from '../../modules/auth/models/session.model';
-import {AuthService} from '../../modules/auth/services/auth.service';
-import {Router} from '@angular/router';
+import {UserIdentity} from '../../features/auth/models/session.model';
+import {AuthService} from '../../features/auth/services/auth.service';
+import {Router, RouterLink} from '@angular/router';
 import {Subscription} from 'rxjs';
+import {UserIdentityPipe} from '../../features/auth/pipes/user-identity.pipe';
+import {AppLocalePickerComponent} from '../app-locale-picker/app-locale-picker.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-header',
     templateUrl: './app-header.component.html',
+    imports: [
+        RouterLink,
+        UserIdentityPipe,
+        AppLocalePickerComponent,
+        TranslatePipe
+    ],
     styleUrl: './app-header.component.scss'
 })
 export class AppHeaderComponent implements OnInit, OnDestroy {

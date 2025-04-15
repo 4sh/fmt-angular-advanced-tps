@@ -7,7 +7,7 @@
 Supported operating systems: macOS, Linux and Windows.
 
 ### Node.js
-Node.js v20.10+ is required to run the project.
+Node.js v22.11+ is required to run the project.
 
 You can check the current Node.js version by running the `node -v` command.
 
@@ -41,8 +41,8 @@ or you can just start the `Start backend` run configuration under IntelliJ IDEA 
 
 ## Frontend
 
-App is written with Angular version 17 with the following configuration:
-- 🧩 using `NgModules` (no standalone API)
+App is written with Angular version 19 with the following configuration:
+- 🧩 using standalone API
 - 🛣️ routing enabled
 - 🎨 using `.scss` files for style
 - ✨ strict type checking
