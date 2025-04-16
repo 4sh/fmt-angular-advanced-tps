@@ -8,6 +8,8 @@ import {TabsComponent} from '../tabs.component';
 })
 export class TabComponent implements OnInit {
     public title: InputSignal<string> = input.required<string>();
+    public path: InputSignal<string> = input.required<string>();
+    public default: InputSignal<boolean | undefined> = input<boolean | undefined>(undefined);
     public active: boolean = false;
 
     constructor(private tabsComponent: TabsComponent) {

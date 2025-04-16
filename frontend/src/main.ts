@@ -3,7 +3,7 @@ import {bootstrapApplication} from '@angular/platform-browser';
 import {HttpClient, provideHttpClient, withInterceptors, withInterceptorsFromDi} from '@angular/common/http';
 import {authInterceptor} from './app/features/auth/interceptors/auth.interceptor';
 import {errorInterceptor} from './app/features/auth/interceptors/error.interceptor';
-import {provideRouter, withComponentInputBinding} from '@angular/router';
+import {provideRouter, withComponentInputBinding, withRouterConfig} from '@angular/router';
 import {routes} from './app/app-root.routes';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import {provideToastr} from 'ngx-toastr';
@@ -25,7 +25,7 @@ bootstrapApplication(AppRootPageComponent, {
             withInterceptorsFromDi(),
             withInterceptors([authInterceptor, errorInterceptor, cellarInterceptor])
         ),
-        provideRouter(routes, withComponentInputBinding()),
+        provideRouter(routes, withComponentInputBinding(), withRouterConfig({paramsInheritanceStrategy: 'always'})),
         provideAnimations(),
         provideToastr({
             positionClass: 'toast-bottom-right',
