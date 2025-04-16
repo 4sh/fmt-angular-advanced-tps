@@ -5,7 +5,7 @@ import {debounceTime, distinctUntilChanged, map, Subscription} from 'rxjs';
 import {Router, RouterLink} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {TranslatePipe} from '@ngx-translate/core';
-import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.component';
+import {BottleListComponent} from '../../components/bottle-list/bottle-list.component';
 
 @Component({
     selector: 'bottles-list-page',
@@ -14,7 +14,7 @@ import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.comp
         FormsModule,
         RouterLink,
         TranslatePipe,
-        BottleTileComponent
+        BottleListComponent
     ],
     styleUrl: './bottles-list-page.component.scss'
 })

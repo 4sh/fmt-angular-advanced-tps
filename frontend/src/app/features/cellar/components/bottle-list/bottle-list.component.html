@@ -1,0 +1,5 @@
+<div class="bottlesList-list">
+    @for (bottle of bottles(); track bottle.id) {
+        <bottle-tile [bottle]="bottle" (selected)="selected.emit($event)"></bottle-tile>
+    }
+</div>

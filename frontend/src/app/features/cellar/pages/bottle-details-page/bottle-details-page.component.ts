@@ -7,13 +7,21 @@ import {NotificationService} from '../../../../../shared/services/notification.s
 import {BottleScore} from '../../models/score.model';
 import {BottleFormComponent} from '../../components/bottle-form/bottle-form.component';
 import {BottleScoresComponent} from '../../components/bottle-scores/bottle-scores.component';
+import {TranslatePipe} from '@ngx-translate/core';
+import {TabsComponent} from '../../../../../shared/components/tabs/tabs.component';
+import {TabComponent} from '../../../../../shared/components/tabs/tab/tab.component';
+import {RelatedBottleListComponent} from '../../components/related-bottle-list/related-bottle-list.component';
 
 @Component({
     selector: 'bottle-details-page',
     templateUrl: './bottle-details-page.component.html',
     imports: [
         BottleFormComponent,
-        BottleScoresComponent
+        BottleScoresComponent,
+        TranslatePipe,
+        TabsComponent,
+        TabComponent,
+        RelatedBottleListComponent
     ],
     styleUrl: './bottle-details-page.component.scss'
 })
