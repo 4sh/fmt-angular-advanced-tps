@@ -5,6 +5,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 import {KeyValuePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {ExistingUrlValidatorDirective} from '../../directives/existing-url-validator.directive';
+import {UniqueBottleValidatorDirective} from '../../directives/unique-bottle-validator.directive';
 
 @Component({
     selector: 'bottle-form',
@@ -14,7 +15,8 @@ import {ExistingUrlValidatorDirective} from '../../directives/existing-url-valid
         TranslatePipe,
         KeyValuePipe,
         RouterLink,
-        ExistingUrlValidatorDirective
+        ExistingUrlValidatorDirective,
+        UniqueBottleValidatorDirective
     ],
     styleUrl: './bottle-form.component.scss'
 })

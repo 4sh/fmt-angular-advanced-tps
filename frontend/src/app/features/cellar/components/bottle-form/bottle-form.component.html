@@ -1,28 +1,42 @@
 @if (bottle) {
     <form #form="ngForm" (ngSubmit)="submitted.emit(bottle)">
-        <label for="estate">{{ 'bottle.estate' | translate }}</label>
-        <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate"
-               #estateMl="ngModel"
-               required
-               [class._error]="estateMl.errors && estateMl.errors['required']"/>
 
-        <label for="vintage">{{ 'bottle.vintage' | translate }}</label>
-        <input id="vintage" name="vintage" type="number"
-               [(ngModel)]="bottle.vintage"
-               #vintageMl="ngModel"
-               min="1800"
-               [max]="vintageMaxYear"
-               required
-               [class._error]="vintageMl.errors && (vintageMl.errors['required'] || vintageMl.errors['min'] || vintageMl.errors['max'])"/>
+        <ng-container [ngModelGroup]="'bottle'" #bottleGroup="ngModelGroup" [uniqueBottle]="bottle">
+            <label for="estate">{{ 'bottle.estate' | translate }}</label>
+            <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate"
+                   [ngModelOptions]="{ updateOn: 'blur' }"
+                   #estateMl="ngModel"
+                   required
+                   [class._error]="estateMl.errors && estateMl.errors['required']"/>
 
-        <label for="color">{{ 'bottle.color' | translate }}</label>
-        <select id="color" name="color" [(ngModel)]="bottle.color" required>
-            @for (color of Color | keyvalue; track color.key) {
-                <option [value]="color.key">
-                    {{ 'bottle.color.' + color.key | translate }}
-                </option>
+            <label for="vintage">{{ 'bottle.vintage' | translate }}</label>
+            <input id="vintage" name="vintage" type="number"
+                   [(ngModel)]="bottle.vintage"
+                   [ngModelOptions]="{ updateOn: 'blur' }"
+                   #vintageMl="ngModel"
+                   min="1800"
+                   [max]="vintageMaxYear"
+                   required
+                   [class._error]="vintageMl.errors && (vintageMl.errors['required'] || vintageMl.errors['min'] || vintageMl.errors['max'])"/>
+
+            <label for="color">{{ 'bottle.color' | translate }}</label>
+            <select id="color" name="color"
+                    [(ngModel)]="bottle.color"
+                    [ngModelOptions]="{ updateOn: 'blur' }"
+                    required>
+                @for (color of Color | keyvalue; track color.key) {
+                    <option [value]="color.key">
+                        {{ 'bottle.color.' + color.key | translate }}
+                    </option>
+                }
+            </select>
+
+            @if (bottleGroup.errors?.['alreadyExists']) {
+                <div class="formError">
+                    {{ 'bottle.error.alreadyExists' | translate }}
+                </div>
             }
-        </select>
+        </ng-container>
 
         <label for="quantity">{{ 'bottle.quantity' | translate }}</label>
         <input id="quantity" name="quantity" type="number"

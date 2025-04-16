@@ -80,7 +80,7 @@ export class BottleDetailsPageComponent implements OnDestroy {
         }
     }
 
-    public createScore(score: number): void {
+    public createScore(score: number | undefined | null): void {
         if (score) {
             const bottleId = this.bottle!.id!;
             this.cellarService
