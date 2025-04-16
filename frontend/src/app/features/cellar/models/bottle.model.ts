@@ -17,3 +17,7 @@ export type Bottle = {
 export type BottleComputedData = {
     averageScore?: number;
 };
+
+export type BottleCriteria = {
+    q?: string;
+};
